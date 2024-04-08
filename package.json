@@ -1,0 +1,36 @@
+{
+  "name": "vue-konva-html",
+  "version": "1.0.0",
+  "description": "vue-konva-html",
+  "scripts": {
+    "clean": "rm -rf ./lib ./es",
+    "tsc": "tsc --module es6 --outDir ./es && tsc --module commonjs -outDir ./lib",
+    "build": "npm run clean && npm run tsc"
+  },
+  "module": "./es/index.js",
+  "main": "./lib/index.js",
+  "peerDependencies": {
+    "vue": "^3"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./es/html.d.ts",
+        "default": "./es/index.js"
+      },
+      "require": {
+        "types": "./lib/html.d.ts",
+        "default": "./lib/index.js"
+      }
+    }
+  },
+  "files": [
+    "es",
+    "lib",
+    "src"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "vue": "^3.4.21"
+  }
+}
